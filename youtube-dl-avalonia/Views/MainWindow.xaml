@@ -1,0 +1,44 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:youtube_dl_avalonia.Views"
+        xmlns:vm="clr-namespace:youtube_dl_avalonia.ViewModels;assembly=youtube_dl_avalonia"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="960" d:DesignHeight="600"
+        x:Class="youtube_dl_avalonia.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Cube YouTube Downloader - Cross-Platform"
+        FontFamily="Segoe UI, San Francisco, Lucida Grande, sans-serif"
+        Height="620"
+        Width="960">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+  <TabControl>
+    <TabItem>
+      <TabItem.Header>
+        <TextBlock VerticalAlignment="Center">Home</TextBlock>
+      </TabItem.Header>
+      <ScrollViewer>
+        <views:HomeView/>
+      </ScrollViewer>
+    </TabItem>
+    <TabItem>
+      <TabItem.Header>
+        <TextBlock VerticalAlignment="Center">Settings</TextBlock>
+      </TabItem.Header>
+      <ScrollViewer>
+        <views:SettingsView/>
+      </ScrollViewer>
+    </TabItem>
+    <TabItem>
+      <TabItem.Header>
+        <TextBlock VerticalAlignment="Center">About</TextBlock>
+      </TabItem.Header>
+      <ScrollViewer>
+        <views:AboutView/>
+      </ScrollViewer>
+    </TabItem>
+  </TabControl>
+</Window>

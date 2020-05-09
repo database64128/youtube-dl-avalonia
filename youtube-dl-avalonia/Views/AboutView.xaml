@@ -1,0 +1,21 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="youtube_dl_avalonia.Views.AboutView">
+  <Grid Margin="24,16,24,24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <TextBlock Grid.Row="0" Margin="8 8 8 8" FontSize="24" TextWrapping="Wrap">About - v0.1 Build 20200509</TextBlock>
+    <TextBlock Grid.Row="1" Margin="8 8 8 8" FontSize="16" TextWrapping="Wrap">
+      Cube YouTube Downloader is a simple GUI wrapper for https://github.com/ytdl-org/youtube-dl
+    </TextBlock>
+    <TextBlock Grid.Row="2" Margin="8 8 8 8" FontSize="16" TextWrapping="Wrap">
+      For more information please visit https://github.com/database64128/youtube-dl-wpf
+    </TextBlock>
+  </Grid>
+</UserControl>

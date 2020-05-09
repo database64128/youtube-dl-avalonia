@@ -1,0 +1,113 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="youtube_dl_avalonia.Views.HomeView">
+  <Grid Margin="24,16,24,24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <TextBlock Margin="8,8,8,8" FontSize="24">Start your download</TextBlock>
+    <StackPanel Grid.Row="1">
+      <StackPanel Orientation="Horizontal" >
+        <TextBlock FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">Video Link</TextBlock>
+        <TextBox
+            x:Name="linkTextBox"
+            Watermark="e.g. https://www.youtube.com/watch?v=b2390GAm4d0"
+            Margin="8,8,8,8" Width="384"
+            Text="{Binding Link}"/>
+        <Button
+            x:Name="downloadButton"
+            Margin="8,8,8,8"
+            IsEnabled="{Binding FreezeButton}"
+            Command="{Binding StartDownload}">Download</Button>
+        <Button
+            x:Name="listFormatsButton"
+            Margin="8,8,8,8"
+            IsEnabled="{Binding FreezeButton}"
+            Command="{Binding ListFormats}">List Formats</Button>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock FontSize="16" VerticalAlignment="Top" Margin="8,8,8,8">Options</TextBlock>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <StackPanel Orientation="Horizontal">
+            <CheckBox
+                x:Name="overrideFormatsToggle"
+                Margin="8,8,8,8"
+                IsChecked="{Binding OverrideFormats}"/>
+            <TextBlock VerticalAlignment="Center" Margin="0,8,8,8">Override Formats</TextBlock>
+            <TextBlock VerticalAlignment="Center" Margin="8,8,8,8">Video Format</TextBlock>
+            <TextBox
+                x:Name="videoTextBox"
+                Margin="0,8,8,8"
+                Width="50"
+                IsEnabled="{Binding Path=IsChecked, ElementName=overrideFormatsToggle}"
+                Text="{Binding VideoFormat}"/>
+            <TextBlock VerticalAlignment="Center" Margin="8,8,8,8">Audio Format</TextBlock>
+            <TextBox
+                x:Name="audioTextBox"
+                Margin="0,8,8,8"
+                Width="50"
+                IsEnabled="{Binding Path=IsChecked, ElementName=overrideFormatsToggle}"
+                Text="{Binding AudioFormat}"/>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <CheckBox
+                x:Name="metadataToggle"
+                Margin="8,8,8,8"
+                IsChecked="{Binding Metadata}"/>
+            <TextBlock VerticalAlignment="Center" Margin="0,8,8,8">Add Metadata</TextBlock>
+            <CheckBox
+                x:Name="thumbnailToggle"
+                Margin="8,8,8,8"
+                IsChecked="{Binding Thumbnail}"/>
+            <TextBlock VerticalAlignment="Center" Margin="0,8,8,8">Download Thumbnail</TextBlock>
+            <CheckBox
+                x:Name="SubtitlesToggle"
+                Margin="8,8,8,8"
+                IsChecked="{Binding Subtitles}"/>
+            <TextBlock VerticalAlignment="Center" Margin="0,8,8,8">Download Subtitles</TextBlock>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <CheckBox
+                x:Name="pathToggle"
+                Margin="8,8,8,8"
+                IsChecked="{Binding CustomPath}"/>
+            <TextBlock VerticalAlignment="Center" Margin="0,8,8,8">Custom Download Path</TextBlock>
+            <TextBox
+                x:Name="pathTextBox"
+                Margin="8,8,2,8"
+                Width="384"
+                IsEnabled="{Binding Path=IsChecked, ElementName=pathToggle}"
+                Text="{Binding DownloadPath}"/>
+            <Button
+                x:Name="browseButton"
+                Margin="2,8,8,8"
+                IsEnabled="{Binding Path=IsChecked, ElementName=pathToggle}"
+                Command="{Binding BrowseFolder}"
+                CommandParameter="DownloadPath">Browse</Button>
+          </StackPanel>
+        </Grid>
+      </StackPanel>
+    </StackPanel>
+    <StackPanel Grid.Row="2">
+      <TextBlock Margin="8,24,8,8" FontSize="24">Results</TextBlock>
+      <TextBox
+          x:Name="resultTextBox"
+          Height="240"
+          Margin="8,8,8,8"
+          TextWrapping="Wrap"
+          IsReadOnly="True"
+          Watermark="Output from youtube-dl"
+          Text="{Binding Output}" />
+    </StackPanel>
+  </Grid>
+</UserControl>
