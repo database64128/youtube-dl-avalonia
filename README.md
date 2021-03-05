@@ -1,17 +1,12 @@
 # 🎞⬇ Cube YouTube Downloader - `youtube-dl-avalonia`
 
+_The project has been archived and merged into [`youtube-dl-wpf`](https://github.com/database64128/youtube-dl-wpf) as a unified codebase with cross-platform support._
+
 A simple cross-platform GUI wrapper for [`youtube-dl`](https://github.com/ytdl-org/youtube-dl). Ported from [`youtube-dl-wpf`](https://github.com/database64128/youtube-dl-wpf).
 
 ## Features
 
-- Toggle 🌃 Dark Mode and 🔆 Light Mode.
-- Update `youtube-dl` on startup.
-- List available formats.
-- Override video and audio formats.
-- Toggle metadata embedding.
-- Toggle thumbnail and subtitles embedding.
-- Custom `ffmpeg` and `youtube-dl` path.
-- Custom proxy support.
+- WIP
 
 ## Known Issues
 

@@ -10,12 +10,12 @@
       <RowDefinition Height="auto"/>
       <RowDefinition Height="auto"/>
     </Grid.RowDefinitions>
-    <TextBlock Grid.Row="0" Margin="8 8 8 8" FontSize="24" TextWrapping="Wrap">About - v0.1 Build 20200509</TextBlock>
+    <TextBlock Grid.Row="0" Margin="8 8 8 8" FontSize="24" TextWrapping="Wrap">About - v0.1 Build 20200516</TextBlock>
     <TextBlock Grid.Row="1" Margin="8 8 8 8" FontSize="16" TextWrapping="Wrap">
       Cube YouTube Downloader is a simple GUI wrapper for https://github.com/ytdl-org/youtube-dl
     </TextBlock>
     <TextBlock Grid.Row="2" Margin="8 8 8 8" FontSize="16" TextWrapping="Wrap">
-      For more information please visit https://github.com/database64128/youtube-dl-wpf
+      For more information please visit https://github.com/database64128/youtube-dl-avalonia
     </TextBlock>
   </Grid>
 </UserControl>

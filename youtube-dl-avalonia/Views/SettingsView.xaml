@@ -4,68 +4,83 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="youtube_dl_avalonia.Views.SettingsView">
-  <Grid Margin="24,16,24,24">
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
-    </Grid.ColumnDefinitions>
-    <TextBlock Grid.Row="0" Grid.Column="0" Margin="8,8,8,8" FontSize="24">Settings</TextBlock>
-      <TextBlock Grid.Row="1" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">Color Mode</TextBlock>
-      <CheckBox
-        Grid.Row="1"
-        Grid.Column="1"
-          x:Name="darkModeToggle"
-          Margin="8,8,8,8"
-          IsChecked="{Binding DarkMode}"
-          Command="{Binding ChangeColorMode}"
-          CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"/>
-      <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="0,8,8,8" Text="{Binding ColorMode}" />
-      <TextBlock Grid.Row="2" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8" Text="youtube-dl Path" />
-    <TextBox
-      Grid.Row="2"
-      Grid.Column="1"
-          x:Name="dlPathTextBox"
-          Margin="2,8,2,8"
-          Width="384"
-          Text="{Binding DlPath}"/>
-    <Button
-      Grid.Row="2"
-      Grid.Column="2"
-          x:Name="dlPathBrowseButton"
-          Margin="2,8,8,8"
-          Command="{Binding BrowseExe}"
-          CommandParameter="youtube-dl">Browse</Button>
-      <TextBlock Grid.Row="3" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">
-        ffmpeg Path
-      </TextBlock>
-    <TextBox
-      Grid.Row="3"
-      Grid.Column="1"
-          x:Name="ffmpegPathTextBox"
-          Margin="2,8,2,8"
-          Width="384"
-          Text="{Binding FfmpegPath}"/>
-    <Button
-      Grid.Row="3"
-      Grid.Column="2"
-          x:Name="ffmpegPathBrowseButton"
-          Margin="2,8,8,8"
-          Command="{Binding BrowseExe}"
-          CommandParameter="ffmpeg">Browse</Button>
-      <TextBlock Grid.Row="4" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">Proxy</TextBlock>
-      <TextBox
-        Grid.Row="4" Grid.Column="1"
-          x:Name="proxyTextBox"
-          Margin="2,8,2,8"
-          Width="384"
-          Text="{Binding Proxy}"/>
-  </Grid>
+    <Grid Margin="24,16,24,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="8,8,8,8" FontSize="24">Settings</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">Color Mode</TextBlock>
+            <CheckBox
+                Grid.Row="1"
+                Grid.Column="1"
+                x:Name="darkModeToggle"
+                Margin="8,8,8,8"
+                IsChecked="{Binding DarkMode}"
+                Command="{Binding ChangeColorMode}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="0,8,8,8" Text="{Binding ColorMode}" />
+        <TextBlock Grid.Row="2" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">
+            Update youtube-dl on Startup
+        </TextBlock>
+        <CheckBox
+            Grid.Row="2"
+            Grid.Column="1"
+            x:Name="autoUpdateDlToggle"
+            Margin="8"
+            IsChecked="{Binding AutoUpdateDl}"
+            HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8" Text="youtube-dl Path" />
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="1"
+            x:Name="dlPathTextBox"
+            Margin="2,8,2,8"
+            Width="400"
+            Watermark="Required"
+            Text="{Binding DlPath}"/>
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            x:Name="dlPathBrowseButton"
+            Margin="2,8,8,8"
+            Command="{Binding BrowseExe}"
+            CommandParameter="youtube-dl">Browse</Button>
+        <TextBlock Grid.Row="4" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">
+            ffmpeg Path
+        </TextBlock>
+        <TextBox
+            Grid.Row="4"
+            Grid.Column="1"
+            x:Name="ffmpegPathTextBox"
+            Margin="2,8,2,8"
+            Width="400"
+            Watermark="Optional but recommended"
+            Text="{Binding FfmpegPath}"/>
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            x:Name="ffmpegPathBrowseButton"
+            Margin="2,8,8,8"
+            Command="{Binding BrowseExe}"
+            CommandParameter="ffmpeg">Browse</Button>
+        <TextBlock Grid.Row="5" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="8,8,8,8">Proxy</TextBlock>
+        <TextBox
+            Grid.Row="5"
+            Grid.Column="1"
+            x:Name="proxyTextBox"
+            Margin="2,8,2,8"
+            Width="400"
+            Watermark="e.g. socks5://localhost:1080. Leave empty to use system proxy."
+            Text="{Binding Proxy}"/>
+    </Grid>
 </UserControl>

@@ -2,6 +2,19 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <Version>0.2.0</Version>
+    <Copyright>© 2020 database64128</Copyright>
+    <Authors>database64128</Authors>
+    <Company>database64128</Company>
+    <Product>Cube YouTube Downloader</Product>
+    <Description>A simple GUI wrapper for https://github.com/ytdl-org/youtube-dl.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/database64128/youtube-dl-avalonia</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/database64128/youtube-dl-avalonia</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageIcon>youtube-dl-avalonia.png</PackageIcon>
+    <ApplicationIcon>Assets\youtube-dl-avalonia.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -22,11 +35,19 @@
     <None Remove="Views\AboutView.xaml" />
     <None Remove="Views\HomeView.xaml" />
     <None Remove="Views\SettingsView.xaml" />
+    <None Include="Assets\youtube-dl-avalonia.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.10" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.10" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.10" />
+    <PackageReference Include="Avalonia" Version="0.9.12" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.12" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\HomeView.xaml">
